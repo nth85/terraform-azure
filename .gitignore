@@ -12,3 +12,9 @@
 
 *.pem
 id_rsa
+
+# Chặn các file key bí mật, chỉ cho phép file public
+*.key
+*.pem
+vm01_key
+!vm01_key.pub

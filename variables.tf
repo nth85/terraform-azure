@@ -8,9 +8,10 @@ variable "main_location" {
   default = "Australia Southeast"
 }
 
+
 variable "ssh_key_local" {
   type    = string
-  default = "D:/1.1Huynt/GIT/cloudoffline/azure/vm01_key.pub"
+  default = "./vm01_key.pub" #"D:/1.1Huynt/GIT/cloudoffline/azure/vm01_key.pub"
 }
 
 variable "is_prod" {
