@@ -13,7 +13,7 @@ locals {
     }
     "prod" = {
       name  = "production"
-      count = 2
+      count = 1
       size  = "Standard_B2ats_v2"
     }
   }
