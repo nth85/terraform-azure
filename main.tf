@@ -33,9 +33,9 @@ resource "azurerm_resource_group" "rg" {
 }
 
 module "web_server" {
-  source              = "./modules/azure-vm"
-  count               = local.vm_count 
-  
+  source = "./modules/azure-vm"
+  count  = local.vm_count
+
   vm_name             = "vm-web-${local.env_name}-${count.index}"
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
@@ -47,10 +47,10 @@ module "web_server" {
 # locals {
 #   # Nếu workspace là prod thì env là "production", ngược lại là "development"
 #   env_name = terraform.workspace == "prod" ? "production" : "development"
-  
+
 #   # Nếu là prod thì tạo 2 máy, dev chỉ tạo 1 máy để tiết kiệm
 #   vm_count = terraform.workspace == "prod" ? 2 : 1
-  
+
 #   # Chọn size máy dựa trên môi trường
 # #  vm_size  = terraform.workspace == "prod" ? "Standard_B2ats_v2" : "Standard_B2ats_v2"
 # }
@@ -81,7 +81,7 @@ module "web_server" {
 # # Gọi Module lần 1 (Máy Web)
 # module "web_server" {
 #   source              = "./modules/azure-vm"
-  
+
 #   # Truyền giá trị từ biến bên ngoài và từ RG vừa tạo vào Module
 #   resource_group_name = azurerm_resource_group.main.name
 #   location            = azurerm_resource_group.main.location
@@ -101,7 +101,7 @@ module "web_server" {
 # # Gọi Module lần 2 (Máy Database - nếu cần)
 # module "db_server" {
 #   source              = "./modules/azure-vm"
-  
+
 #   resource_group_name = azurerm_resource_group.main.name
 #   location            = azurerm_resource_group.main.location
 #   vm_name             = "vm-db-dev"
