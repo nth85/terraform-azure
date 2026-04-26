@@ -26,7 +26,7 @@ variable "admin_username" {
 
 variable "ssh_public_key_path" {
   type        = string
-  description = "Đường dẫn đến file .pub trên máy cá nhân"
+  description = "Đường dẫn đến file .pub hiện đã push lên folder"
 }
 
 variable "custom_data_script" {
